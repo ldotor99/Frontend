@@ -1,0 +1,51 @@
+<mat-card-content>
+    <div>
+        <br>
+<h4 class="center-content">Departamento</h4>
+<div  class="center-content">
+<mat-form-field appearance="fill" class="tamaño" >
+  <mat-label>Seleccione un departamento</mat-label>
+  <mat-select [(ngModel)]="departamentoSeleccionado.id_departamento" (ngModelChange)="municipiosDelDepartamento($event)">
+    <mat-option *ngFor="let d of departamento" [value]="d.id_departamento">
+        {{ d.nombre_departamento }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+
+<h4 class="center-content">Municipio</h4>
+<div  class="center-content">
+<mat-form-field appearance="fill" class="tamaño">
+    <mat-label>Selecione un municipio</mat-label>
+    <mat-select [(ngModel)]="infomacionpoblacion.codigo_municipio">
+        <mat-option *ngFor="let m of municipio" [value]="m.id_municipio">
+            {{ m.nombre_municipio }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+</div>
+
+<h4 class="center-content">Habitantes Poblacion Urbana</h4>
+<div  class="center-content">
+<mat-form-field appearance="fill" class="tamaño">                    
+    <mat-label>Poblacion Urbana</mat-label>
+    <input type="number" matInput onkeypress = "return event.charCode >= 48" min="0" class="form-control validate" id="pUrbana" name="pUrbana" [(ngModel)]="infomacionpoblacion.poblacion_urbana">
+  </mat-form-field>
+</div>
+
+
+<h4 class="center-content">Habitantes Poblacion Rural</h4>
+<div  class="center-content">
+    <mat-form-field appearance="fill" class="tamaño">                    
+        <mat-label>Poblacion Rural</mat-label>
+        <input type="number" matInput onkeypress = "return event.charCode >= 48" min="0" class="form-control validate" id="pRural" name="pRural" [(ngModel)]="infomacionpoblacion.poblacion_rural">
+    </mat-form-field>
+</div>
+
+
+<div class="example-button-row center-content">
+    <button class="btn btn-success tamaño"  ng-click="myfunc()" mat-flat-button color="primary" (click)="crearRegistro()">Crear Registro</button>
+</div>
+    </div>
+
+</mat-card-content>

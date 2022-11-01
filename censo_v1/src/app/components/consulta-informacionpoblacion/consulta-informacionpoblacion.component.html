@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col">
+    <div class="form-control">
+      <mat-card-content>
+        <div>
+            <br>
+      <h4 class="center-content">Departamento</h4>
+      <div  class="center-content">
+      <mat-form-field appearance="fill" class="tamaño" >
+      <mat-label>Seleccione un departamento</mat-label>
+      <mat-select [(ngModel)]="departamentoSeleccionado.id_departamento" (ngModelChange)="municipiosDelDepartamento($event)">
+        <mat-option *ngFor="let d of departamento" [value]="d.id_departamento">
+            {{ d.nombre_departamento }}
+        </mat-option>
+      </mat-select>
+      </mat-form-field>
+      </div>
+      
+      <h4 class="center-content">Municipio</h4>
+      <div  class="center-content">
+        <mat-form-field appearance="fill" class="tamaño">
+            <mat-label>Selecione un municipio</mat-label>
+            <mat-select [(ngModel)]="municipioSeleccionado.id_municipio" (ngModelChange)="obtenerInformacionPoblacion($event)">
+                <mat-option *ngFor="let m of municipio" [value]="m.id_municipio">
+                    {{ m.nombre_municipio }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div>
+      <br>
+      </div>
+      </mat-card-content>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="form-control" *ngFor="let i of informacionPoblacion" >
+      <mat-label class="center-content">Registro De La Población En El Municipio:</mat-label>
+      <mat-label class="center-content">Cantidad De Población Urbana : {{i.poblacion_urbana}}</mat-label>
+      <mat-label class="center-content">Cantidad De Población Rural : {{i.poblacion_rural}}</mat-label>
+      <mat-label class="center-content">Total De La Población: {{i.total_poblacion}}</mat-label>
+      <mat-label class="center-content">Porcentaje De Población Urbana : {{i.porcentaje_urbana}}</mat-label>
+      <mat-label class="center-content">Porcentaje De Población Rural : {{i.porcentaje_rural}}</mat-label>
+      <mat-label class="center-content">Categoria Del Municipio: {{i.categoria_municipio}}</mat-label>
+    </div>
+  </div>
+</div>
