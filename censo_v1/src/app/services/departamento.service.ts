@@ -8,7 +8,7 @@ import { Observable } from 'rxjs'
 })
 export class DepartamentoService {
 
-  private baseURL = "http://localhost:8080/poblacion/v1/listarDepartamento";
+  private baseURL = "http://censopoblacionv1-env.eba-3urmumim.us-east-1.elasticbeanstalk.com/listarDepartamento";
 
   constructor(private httpClient : HttpClient) { }
 

@@ -8,7 +8,7 @@ import { Municipio } from '../models/municipio';
 })
 export class MunicipioService {
 
-  private baseURL = "http://localhost:8080/poblacion/v1/listarMunicipio";
+  private baseURL = "http://censopoblacionv1-env.eba-3urmumim.us-east-1.elasticbeanstalk.com/listarMunicipio";
 
   constructor(private httpClient : HttpClient) { }
 

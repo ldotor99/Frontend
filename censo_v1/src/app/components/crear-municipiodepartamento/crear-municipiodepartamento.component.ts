@@ -66,8 +66,5 @@ export class CrearMunicipiodepartamentoComponent implements OnInit {
       console.log(dato);
       window.location.reload();
     }, error => console.log(error));
-    
   }
-
-
 }
